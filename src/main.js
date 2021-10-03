@@ -88,7 +88,7 @@ window.onload = function() {
       const door = roomDetails.doors[doorId];
 
       roomConf[doorId] = [
-        sprite(door.keysRequired > 0 ? 'finaldoor' : 'opendoor'),
+        sprite(door.itemsRequired > 0 ? 'finaldoor' : 'opendoor'),
         'door',
         {
           leadsTo: door.leadsTo,
@@ -197,10 +197,58 @@ window.onload = function() {
   // Winner scene when the game comes to an end
   scene('winner', () => {
     add([
-      text(`You have escaped the cave successfully!`, 6),
+      text(`You have escaped `, 6),
       pos(width()/2, height()/2),
       origin('center'),
     ]);
+    add([
+      text(`cave successfully `, 6),
+      pos(width()/2+10, height()/2+10),
+      origin('center'),
+    ]);
+  })
+
+  scene('instructions', () => {
+
+    add([
+      text('Instructions', 6),
+      pos(width()/2, height()/2),
+      origin('center')
+    ]);
+
+    add([
+      text('1.Cave is unstable', 4),
+      pos(width()/2, height()/2+10),
+      origin('center')
+    ]);
+
+    add([
+      text('2.Cave throws player to random', 4),
+      pos(width()/2, height()/2+20),
+      origin('center')
+    ]);
+
+    add([
+      text('room on item collected', 4),
+      pos(width()/2, height()/2+30),
+      origin('center')
+    ]);
+
+    add([
+      text('3. Cave has 6 rooms/passages', 4),
+      pos(width()/2, height()/2+40),
+      origin('center')
+    ]);
+
+    add([
+      text('Press space to begin!', 6),
+      pos(width()/2, height()/2+50),
+      origin('center')
+    ]);
+
+    keyPress('space', () => {
+      go('play', 0);
+    });
   })
 
   scene('main', () => {
@@ -212,8 +260,20 @@ window.onload = function() {
       origin('center')
     ]);
 
+    add([
+      text('Use arrow keys to move around', 4),
+      pos(width()/2+10, height()/2+20),
+      origin('center')
+    ]);
+
+    add([
+      text('Find two keys in order to exit through the Red door', 4),
+      pos(width()/2+40, height()/2+40),
+      origin('center')
+    ]);
+
     keyPress('space', () => {
-      go('play', 0);
+      go('instructions');
     });
 
   });
