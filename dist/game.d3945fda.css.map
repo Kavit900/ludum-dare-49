@@ -1,1 +1,0 @@
-{"version":3,"sources":["game.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"game.d3945fda.css","sourceRoot":"../src","sourcesContent":["body {\n  background-color: #000000;\n}\n\n.title {\n  color: #ffffff;\n}\n\n.canvas-holder {\n  width: 100%;\n  text-align:center;\n  margin: auto;\n}\n"]}

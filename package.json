@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html -p 8000",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,7 +14,8 @@
     "kaboom": "^0.5.1",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-clean-easy": "^1.0.2",
-    "parcel-plugin-static-files-copy": "^2.6.0"
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "serve": "^12.0.1"
   },
   "alias": {
     "kaboom": "./node_modules/kaboom/dist/kaboom.mjs"
